@@ -16,9 +16,10 @@
 <section id="addTodoItem">
     <h2>Add To-do Item</h2>
     <input type="text" id="text" value="" placeholder="To-do Item" data-testid="toDoTextInput">
-    <button type="button" onclick="appendTodoItemsToDom()" id="addButton" data-testid ="submitButton">Add To-do Item </button>
+    <button type="button" onclick="addTodoItem(event)" id="addButton" data-testid ="submitButton">Add To-do Item </button>
 </section>
 <section id="listTodoItems">
+  <h2>My list of To-do's</h2>
   <table id = todoItemsList>
     <thead>
       <tr>
