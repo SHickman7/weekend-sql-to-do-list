@@ -2,16 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>SQL To-do List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <script src="./scripts/axios.js"></script>
-  <script src="./scripts/client.js"></script>
+  <script defer src="./scripts/client.js"></script>
   <title>SQL TO-DO List</title>
 </head>
 <body>
   <header>
     <h1>SQL TO-DO List</h1>
   </header>
+<section id="addTodoItem">
+    <h2>Add To-do Item</h2>
+    <input type="text" id="text" value="" placeholder="To-do Item" data-testid="toDoTextInput">
+    <button type="button" onclick="appendTodoItemsToDom()" id="addButton" data-testid ="submitButton">Add To-do Item </button>
+</section>
+<section id="listTodoItems">
+  <table id = todoItemsList>
+    <thead>
+      <tr>
+        <th>To-do Item</th>
+        <th>Complete?</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody id = "viewTodoItems">
+    </tbody>
+  </table>
 
-</body>
+  </section>
+  </body>
 </html>
