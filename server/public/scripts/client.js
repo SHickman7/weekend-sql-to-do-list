@@ -29,13 +29,13 @@ function appendTodoItemsToDom (todoList){
     for(let todoItem of todoList){
         let markCompleteButton = '';
     if (!todoItem.isComplete){
-        markCompleteButton = `<button onClick="markCompleteTodoItem(${todoItem.id})" data-testid="completeButton">Mark Complete</button>`
+        markCompleteButton = `<button onClick="markCompleteTodoItem(${todoItem.id})" data-testid="completeButton">✅</button>`
         todoItemsTableBody.innerHTML += `
         <tr data-testid="toDoItem" data-id="${todoItem.id}">
             <td>${todoItem.text}</td>
             <td>${markCompleteButton}</td>
             <td>
-                <button onClick="deleteTodoItem(${todoItem.id})" data-testid="deleteButton">Delete</button>
+                <button onClick="deleteTodoItem(${todoItem.id})" data-testid="deleteButton">❌</button>
             </td>
         </tr>
         `
@@ -45,7 +45,7 @@ function appendTodoItemsToDom (todoList){
             <td>${todoItem.text}</td>
             <td>${markCompleteButton}</td>
             <td>
-                <button onClick="deleteTodoItem(${todoItem.id})" data-testid="deleteButton">Delete</button>
+                <button onClick="deleteTodoItem(${todoItem.id})" data-testid="deleteButton">❌</button>
             </td>
         </tr>
     `} //end if statement
@@ -104,7 +104,3 @@ function appendTodoItemsToDom (todoList){
 
     
     }
-
-/*    <button onClick="markCompleteTodoItem(${todoItem.id})" data-testid="completeButton">
-    Mark Complete
-</button> */
