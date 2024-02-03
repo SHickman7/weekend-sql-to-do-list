@@ -88,4 +88,29 @@ router.delete('/:id', (req, res) => {
     );
 });
 
+//PUT
+
+router.put ('/:id', (req, res)=>{
+    console.log ('in the put on the server');
+
+    const todoId =  req.params.id;
+    const sqlQuery = `UPDATE "todos" SET "isComplete" = true WHERE "id" =$1;`;
+
+    pool.query(sqlQuery, [todoId])
+    .then(
+        (result) => {
+            console.log(`Update query worked! ${sqlQuery}`, result);
+            res.sendStatus(200);
+        }
+    )
+    .catch (
+        (error) => {
+            console.log(`Update query failed, ${sqlQuery}`, error);
+            res.sendStatus(400);
+        }
+    );
+
+
+})
+
 module.exports = router;
