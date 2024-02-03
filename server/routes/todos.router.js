@@ -63,4 +63,29 @@ router.post ('/', (req, res) => {
         );
 });
 
+
+//Delete
+
+router.delete('/:id', (req, res) => {
+    console.log ('req.params', req.params);
+
+    let id = req.params.id;
+
+    let queryText = `DELETE FROM "todos" WHERE "id" = $1`;
+
+    pool.query(queryText, [id])
+    .then(
+        (result) => {
+            console.log(`DELETE query worked! ${queryText}`, result);
+            res.sendStatus(204);
+        }
+    )
+    .catch(
+        (error) => {
+            console.log(`DELETE query failed, ${queryText}`, error);
+            res.sendStatus(500);
+        }
+    );
+});
+
 module.exports = router;

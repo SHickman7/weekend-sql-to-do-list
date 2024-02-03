@@ -68,3 +68,15 @@ function appendTodoItemsToDom (todoList){
             console.log('Error in POST request', error);
         });
     }
+
+
+    function deleteTodoItem(todoItemId){
+        console.log('In deleteTodoItem');
+
+        axios.delete(`/todos/${todoItemId}`).then((response)=> {
+            getTodoItems();
+        }).catch((error)=>{
+            console.log('Error in the deleteTodoItem function', error);
+            alert('Something went wrong');
+        });
+    }
